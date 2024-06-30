@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Sort</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <button class="back-button" onclick="window.location.href='index.html'">Back to Main Page</button>
+    </div>
+    <h1>Merge Sort Visualizer</h1>
+    <div class="explanation-container">
+        <p>Merge Sort is an efficient, stable, comparison-based, divide and conquer sorting algorithm. Most implementations produce a stable sort, meaning that the implementation preserves the input order of equal elements in the sorted output. Merge Sort works by recursively dividing the unsorted list into n sublists, each containing one element (a list of one element is considered sorted), and repeatedly merging sublists to produce new sorted sublists until there is only one sublist remaining.</p>
+    </div><br>
+    <div class="controls">
+        <button id="startButton" onclick="startSorting()">Start Merge Sort</button>
+        <button id="resetButton" onclick="resetArray()">Reset Array</button>
+        <button id="stopButton" onclick="stopSorting()">Stop Execution</button>
+        <button id="showCodeButton" onclick="showJavaCode()">Show Java Code</button>
+        <button id="showComplexityButton" onclick="showTimeComplexity()">Show Time Complexity</button>
+    </div>
+    <div id="visualizer"></div>
+    <div id="description" class="description-container">Procedure Explanation.</div>
+    
+    <div id="javaCodeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <pre>
+public class MergeSort {
+    public static void mergeSort(int[] arr, int l, int r) {
+        if (l < r) {
+            int m = (l + r) / 2;
+            mergeSort(arr, l, m);
+            mergeSort(arr, m + 1, r);
+            merge(arr, l, m, r);
+        }
+    }
+
+    public static void merge(int[] arr, int l, int m, int r) {
+        int n1 = m - l + 1;
+        int n2 = r - m;
+
+        int[] L = new int[n1];
+        int[] R = new int[n2];
+
+        for (int i = 0; i < n1; i++)
+            L[i] = arr[l + i];
+        for (int j = 0; j < n2; j++)
+            R[j] = arr[m + 1 + j];
+
+        int i = 0, j = 0, k = l;
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];
+                i++;
+            } else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < n1) {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+
+        while (j < n2) {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+}
+            </pre>
+        </div>
+    </div>
+
+    <div id="complexityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeComplexityModal()">&times;</span>
+            <h2>Time Complexity of Merge Sort</h2>
+            <p><strong>Best Case:</strong> O(n log n)</p>
+            <p><strong>Average Case:</strong> O(n log n)</p>
+            <p><strong>Worst Case:</strong> O(n log n)</p>
+        </div>
+    </div>
+
+    <script src="scripts/mergeSort.js"></script>
+</body>
+</html>

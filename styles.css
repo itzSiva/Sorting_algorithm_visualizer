@@ -1,0 +1,342 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f06, #f79, #ff0, #0f9, #06f, #90f);
+    background-size: 300% 300%;
+    animation: GradientBackground 10s ease infinite;
+    color: #ecf0f1;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+@keyframes GradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+#visualizer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ecf0f1;
+    background: #34495e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.array-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background: #3498db;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.array-item.sorted {
+    background: #2ecc71;
+}
+
+.array-item.comparing {
+    background: #e74c3c;
+}
+
+.array-item:hover {
+    background: #2980b9;
+}
+
+.description-container, .explanation-container {
+    margin-top: 20px;
+    padding: 10px;
+    background: #2c3e50;
+    color: #ecf0f1;
+    font-size: 1.2em;
+    border-radius: 5px;
+    width: 80%;
+    min-height: 100px; /* Set a minimum height */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    max-width: 600px;
+    border-radius: 10px;
+    color: #2c3e50;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #3498db;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.back-button:hover {
+    background: #2980b9;
+}/* General styles for the array items */
+.array-item1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background: #3498db;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.partition-left1 {
+    background-color: #01eef6; /* Blue */
+}
+
+.partition-right1 {
+    background-color: #4CAF50; /* Green */
+}
+
+/* Highlighting styles for comparisons */
+.comparing1 {
+    background-color: #ffeb3b; /* Yellow */
+}
+
+
+
+/* Modal styles for Java code */
+.modal1 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content1 {
+    background-color: #dfdfdf;
+    margin: 15% auto;
+    padding: 20px;
+    color: black;
+    border: 1px solid #fcfcfc;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close-button1 {
+    color: #087bff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button1:hover1,
+.close-button1:focus1 {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.controls1 {
+    margin-bottom: 20px;
+}
+
+.array-item2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background: #3498db;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.partition-left2 {
+    background-color: #01eef6; /* Blue */
+}
+
+.partition-right2 {
+    background-color: #4CAF50; /* Green */
+}
+
+.comparing2 {
+    background-color: #ffeb3b; /* Yellow */
+}
+
+.pivot2 {
+    background-color: #FF5733; /* Orange */
+}
+
+.index-i2 {
+    background-color: #2196F3; /* Blue */
+}
+
+.index-j2 {
+    background-color: #4CAF50; /* Green */
+}
+
+/* Modal styles for Quick Sort */
+.modal2 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content2 {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close-button2 {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button2:hover,
+.close-button2:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.controls2 {
+    margin-bottom: 20px;
+}
+
+
+.footer {
+    background-color: #435c76;
+    color: #ecf0f1;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .contact-info {
+    margin-bottom: 10px;
+}
+
+.footer .contact-info p {
+    margin: 5px;
+}
+
+.footer .contact-info a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.footer .contact-info a:hover {
+    text-decoration: underline;
+}
+
+.footer .rights {
+    font-size: 0.8em;
+}

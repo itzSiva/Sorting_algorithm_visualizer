@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Sort</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-bar">
+        <button class="back-button" onclick="window.location.href='index.html'">Back to Main Page</button>
+    </div>
+    <h1>Quick Sort Visualizer</h1>
+    <div class="explanation-container">
+        <p>Quick Sort is an efficient, in-place sorting algorithm that, in practice, is faster than Merge Sort and Heap Sort. However, it is not a stable sort, meaning that the relative order of equal sort items is not preserved. Quick Sort works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively.</p>
+    </div><br>
+    <div class="controls">
+        <button id="startButton" onclick="startQuickSort()">Start Quick Sort</button>
+        <button id="resetButton" onclick="resetArray()">Reset Array</button>
+        <button id="stopButton" onclick="stopSorting()">Stop Execution</button>
+        <button id="showCodeButton" onclick="showJavaCode()">Show Java Code</button>
+        <button id="showComplexityButton" onclick="showTimeComplexity()">Show Time Complexity</button>
+    </div>
+    <div id="visualizer"></div>
+    <div id="description" class="description-container">Procedure Explanation.</div>
+    
+    <div id="javaCodeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <pre>
+public class QuickSort {
+    public static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+
+    public static int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = (low - 1); 
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+        return i + 1;
+    }
+}
+            </pre>
+        </div>
+    </div>
+
+    <div id="complexityModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeComplexityModal()">&times;</span>
+            <h2>Time Complexity of Quick Sort</h2>
+            <p><strong>Best Case:</strong> O(n log n)</p>
+            <p><strong>Average Case:</strong> O(n log n)</p>
+            <p><strong>Worst Case:</strong> O(n^2)</p>
+        </div>
+    </div>
+
+    <script src="scripts/quickSort.js"></script>
+</body>
+</html>
