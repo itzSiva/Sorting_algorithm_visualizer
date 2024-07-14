@@ -159,7 +159,7 @@ button:hover {
 
 .back-button:hover {
     background: #2980b9;
-}/* General styles for the array items */
+}
 .array-item1 {
     display: flex;
     align-items: center;
@@ -183,14 +183,11 @@ button:hover {
     background-color: #4CAF50; /* Green */
 }
 
-/* Highlighting styles for comparisons */
+
 .comparing1 {
     background-color: #ffeb3b; /* Yellow */
 }
 
-
-
-/* Modal styles for Java code */
 .modal1 {
     display: none;
     position: fixed;
@@ -246,30 +243,29 @@ button:hover {
 }
 
 .partition-left2 {
-    background-color: #01eef6; /* Blue */
+    background-color: #01eef6; 
 }
 
 .partition-right2 {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
 }
 
 .comparing2 {
-    background-color: #ffeb3b; /* Yellow */
+    background-color: #ffeb3b; 
 }
 
 .pivot2 {
-    background-color: #FF5733; /* Orange */
+    background-color: #FF5733; 
 }
 
 .index-i2 {
-    background-color: #2196F3; /* Blue */
-}
+    background-color: #2196F3; 
 
 .index-j2 {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
 }
 
-/* Modal styles for Quick Sort */
+
 .modal2 {
     display: none;
     position: fixed;
