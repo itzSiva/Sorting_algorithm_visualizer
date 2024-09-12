@@ -98,7 +98,7 @@ button:hover {
     font-size: 1.2em;
     border-radius: 5px;
     width: 80%;
-    min-height: 100px; /* Set a minimum height */
+    min-height: 100px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -159,7 +159,7 @@ button:hover {
 
 .back-button:hover {
     background: #2980b9;
-}
+}96
 .array-item1 {
     display: flex;
     align-items: center;
@@ -176,17 +176,19 @@ button:hover {
 }
 
 .partition-left1 {
-    background-color: #01eef6; /* Blue */
+    background-color: #01eef6; 
 }
 
 .partition-right1 {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
 }
 
 
 .comparing1 {
-    background-color: #ffeb3b; /* Yellow */
+    background-color: #ffeb3b; 
 }
+
+
 
 .modal1 {
     display: none;
@@ -260,9 +262,10 @@ button:hover {
 
 .index-i2 {
     background-color: #2196F3; 
+}
 
 .index-j2 {
-    background-color: #4CAF50; 
+    background-color: #4CAF50;
 }
 
 
